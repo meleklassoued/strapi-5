@@ -1,61 +1,187 @@
-# 🚀 Getting started with Strapi
+# Strapi v5 Boilerplate Project
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+A modern, Docker-ready Strapi v5 boilerplate with PostgreSQL, optimized for scalable content management.
 
-### `develop`
+## 🚀 Features
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+- Strapi v5 with TypeScript
+- Docker containerization
+- PostgreSQL database integration
+- RESTful API & GraphQL support
+- Role-based access control (RBAC)
+- Media library with multiple providers
+- API documentation (OpenAPI/Swagger)
+- Automated testing setup
+- CI/CD pipeline configurations
+
+## 🔮 Upcoming Features
+
+- [ ] Code Quality & Formatting
+
+  - ESLint configuration for consistent code style
+  - Prettier setup for automatic code formatting
+  - EditorConfig for cross-editor consistency
+
+- [ ] Git Hooks & Conventional Commits
+
+  - Husky for pre-commit and pre-push hooks
+  - Commitlint for conventional commit messages
+  - Lint-staged for running linters on staged files
+
+- [ ] CI/CD Pipeline
+  - GitHub Actions workflow for:
+    - Automated testing
+    - Code quality checks
+    - Build verification
+    - Docker image publishing
+    - Automated deployments
+
+## 🔧 Prerequisites
+
+- Docker Desktop
+- Node.js (>=18.x)
+- npm (>=9.x) or yarn (>=1.22.x)
+
+## 🛠 Quick Start
+
+1. Clone and setup:
+
+```bash
+git clone <repository-url>
+cd my-strapi-project
+cp .env.example .env
+```
+
+2. Start with Docker:
+
+```bash
+make compose-dev
+```
+
+Access points:
+
+- Admin Panel: http://localhost:1337/admin
+- API Endpoint: http://localhost:1337/api
+
+## 📦 Project Structure
 
 ```
+.
+├── config/                  # Strapi configurations
+├── database/               # Database migrations & seeds
+├── src/
+│   ├── admin/             # Admin customizations
+│   ├── api/               # Content-types & routes
+│   ├── extensions/        # Strapi extensions
+│   └── plugins/           # Custom plugins
+├── public/                # Static files
+├── tests/                 # Test suites
+├── types/                 # TypeScript definitions
+├── docker-compose.yml     # Docker compose config
+└── Dockerfile            # Container definition
+```
+
+## 🔑 Environment Setup
+
+Key variables in your `.env`:
+
+```env
+HOST=0.0.0.0
+PORT=1337
+APP_KEYS="your-keys-here"
+API_TOKEN_SALT="your-salt"
+ADMIN_JWT_SECRET="your-secret"
+JWT_SECRET="your-jwt-secret"
+
+# Database
+DATABASE_CLIENT=postgres
+DATABASE_HOST=postgres
+DATABASE_PORT=5432
+DATABASE_NAME=strapi
+DATABASE_USERNAME=strapi
+DATABASE_PASSWORD=strapi
+```
+
+## 🛠 Development
+
+Start development server:
+
+```bash
 npm run develop
-# or
+# or with yarn
 yarn develop
 ```
 
-### `start`
+Run tests:
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
-
-```
-npm run start
-# or
-yarn start
+```bash
+npm run test
+# or with yarn
+yarn test
 ```
 
-### `build`
+## 🚀 Deployment
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
+1. Build for production:
 
-```
+```bash
 npm run build
 # or
 yarn build
 ```
 
-## ⚙️ Deployment
+2. Start production server:
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
-
+```bash
+npm run start
+# or
+yarn start
 ```
-yarn strapi deploy
+
+## 🔒 Security Features
+
+- JWT authentication
+- API token strategy
+- Rate limiting
+- CORS configuration
+- Security headers
+- SQL injection prevention
+
+## 🧪 Testing
+
+```bash
+# Run unit tests
+npm run test:unit
+
+# Run e2e tests
+npm run test:e2e
+
+# Run with coverage
+npm run test:coverage
 ```
 
-## 📚 Learn more
+## 📚 API Documentation
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+- OpenAPI specification available at `/documentation`
+- Built-in Swagger UI
+- API token authentication
+- Request/response examples
+- Schema definitions
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+## 🛟 Support & Resources
 
-## ✨ Community
+- [Strapi v5 Documentation](https://docs.strapi.io)
+- [Strapi Community Discord](https://discord.strapi.io)
+- [Strapi Blog](https://strapi.io/blog)
 
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+## 🤝 Contributing
 
----
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
