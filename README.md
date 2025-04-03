@@ -147,26 +147,6 @@ yarn start
 - Security headers
 - SQL injection prevention
 
-## 🧪 Testing
-
-```bash
-# Run unit tests
-npm run test:unit
-
-# Run e2e tests
-npm run test:e2e
-
-# Run with coverage
-npm run test:coverage
-```
-
-## 📚 API Documentation
-
-- OpenAPI specification available at `/documentation`
-- Built-in Swagger UI
-- API token authentication
-- Request/response examples
-- Schema definitions
 
 ## 🛟 Support & Resources
 
